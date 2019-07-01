@@ -1,0 +1,85 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Socket.io</title>
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Statistique - Au Bon Beurre</h1>
+        </div>
+        <button id="submitBtn">test</button>
+        <div class="firstChart" style="width: 50%; margin: 0 auto;">
+            <canvas id="myChart" width="50% !important"></canvas> 
+        </div>
+           
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+        <script src="/js/scripts.js"></script>
+        <script src='/socket.io/socket.io.js'></script>
+        <script>
+            var submitBtn = document.getElementById('submitBtn');
+
+            var socket = io();
+            submitBtn.addEventListener('click', () => {
+                console.log('test')
+                console.log(data)
+            })
+            
+            
+            
+            
+            
+            // var messageDiv = document.getElementById('messageDiv');
+            // var submitBtn = document.getElementById('submitBtn');
+
+            // var messageInput = document.getElementById('messageInput');
+            // var pseudoInput = document.getElementById('pseudoInput');
+            
+            // var messagePrive = document.getElementById('messagePrive');
+            // var pseudoInputSend = document.getElementById('pseudoInputSend');
+
+            // submitBtn.addEventListener('click', () => {
+            //     //Si le bouton est cliqué
+            //     if(messagePrive.checked == true){
+            //         //Si le bouton message privé est coché
+            //         if(pseudoInputSend.value == ''){
+            //             alert('veuillez mettre le pseudo du destinataire');
+            //         }else{
+            //             if(pseudoInput.value == ''){
+            //                 alert('veuillez mettre un pseudo');
+            //             }else{
+            //                 //Si tous est bon
+            //                 socket.emit('message', [pseudoInput.value, messageInput.value, pseudoInputSend.value])
+            //                 messageDiv.innerHTML += '<p style="color: red;"> Perso :' + pseudoInput.value + ' : ' + messageInput.value + '</p>';
+            //                 messageInput.value = '';
+            //             }
+            //         }
+            //     }else{
+            //         //Si le bouton message privé n'est pas coché
+            //         if(pseudoInput.value == ''){
+            //             alert('veuillez mettre un pseudo');
+            //         }else{
+            //             socket.emit('message', [pseudoInput.value, messageInput.value, pseudoInputSend.value])
+            //             messageDiv.innerHTML += '<p style="color: red;"> Tous le monde : ' + pseudoInput.value + ' : ' + messageInput.value + '</p>';
+            //             messageInput.value = '';
+            //         }
+            //     }
+            // })
+                
+            // socket.on('users', users => {
+            //     console.log(Object.entries(users))
+            //     for (let value of Object.entries(users)) {
+            //         pseudoInputSend.innerHTML += '<option value="' + value[0] + '">' + value[1] + '</option>'
+            //     }
+            // })
+            // //Object.keys(users)
+            // socket.on('message', data => {
+            //     console.log('message received : ', data)
+            //     messageDiv.innerHTML += '<p>' + data + '</p>'
+            // })
+        </script>
+    </body>
+</html>
